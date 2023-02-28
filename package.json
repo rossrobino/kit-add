@@ -1,0 +1,39 @@
+{
+	"name": "kit-add",
+	"version": "0.0.1",
+	"description": "Add integrations to a SvelteKit application.",
+	"main": "dist/index.js",
+	"bin": {
+		"kit-add": "dist/index.js"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"format": "npx prettier --write ."
+	},
+	"repository": "github:rossrobino/kit-add",
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"add"
+	],
+	"author": {
+		"name": "Ross Robino",
+		"url": "https://robino.dev"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@clack/prompts": "^0.6.1",
+		"execa": "^7.0.0",
+		"kleur": "^4.1.5"
+	},
+	"devDependencies": {
+		"@types/node": "^18.14.2",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
+		"eslint": "^8.35.0",
+		"prettier": "^2.8.4",
+		"typescript": "^4.9.5"
+	}
+}

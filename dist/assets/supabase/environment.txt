@@ -1,0 +1,2 @@
+PUBLIC_SUPABASE_URL="Find URL in the Supabase dashboard --> SETTINGS > API"
+PUBLIC_SUPABASE_ANON_KEY="Find ANON_KEY in the Supabase dashboard --> SETTINGS > API"
