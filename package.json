@@ -1,6 +1,6 @@
 {
 	"name": "kit-add",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Add integrations to a SvelteKit application.",
 	"main": "dist/index.js",
 	"bin": {
@@ -11,7 +11,7 @@
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"format": "npx prettier --write .",
-		"pub": "tsc && cp package.json dist/package.json && cp README.md dist/README.md && npm publish --access public ./dist"
+		"pub": "tsc && cp package.json dist/package.json && cp README.md dist/README.md && cp LICENSE.md dist/LICENSE.md && npm publish --access public ./dist"
 	},
 	"repository": "github:rossrobino/kit-add",
 	"keywords": [
