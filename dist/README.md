@@ -7,3 +7,7 @@ npx kit-add
 ```
 
 Open to contributions.
+
+## Integrations
+
+- Supabase
