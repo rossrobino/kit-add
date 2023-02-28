@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 import { intro, select, isCancel, cancel, } from "@clack/prompts";
 import kleur from "kleur";
 import { addSupabase } from "./integrations/supabase.js";

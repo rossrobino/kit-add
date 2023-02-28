@@ -1,10 +1,10 @@
 {
 	"name": "kit-add",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "Add integrations to a SvelteKit application.",
-	"main": "dist/index.js",
+	"main": "index.js",
 	"bin": {
-		"kit-add": "dist/index.js"
+		"kit-add": "index.js"
 	},
 	"type": "module",
 	"scripts": {
