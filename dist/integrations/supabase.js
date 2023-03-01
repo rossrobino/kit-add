@@ -1,10 +1,8 @@
-#! /usr/bin/env node
 import { confirm, select, spinner, outro, isCancel, cancel, } from "@clack/prompts";
 import { execa } from "execa";
 import fs from "fs";
 import kleur from "kleur";
 export async function addSupabase() {
-    // language
     const language = await select({
         message: "Use JavaScript or TypeScript:",
         options: [
@@ -16,7 +14,6 @@ export async function addSupabase() {
         cancel("Operation cancelled.");
         process.exit(0);
     }
-    // auth
     const auth = await confirm({
         message: "Do you want to use Supabase for Authentication?",
     });
@@ -31,7 +28,7 @@ export async function addSupabase() {
             message: "Do you want to initialize " +
                 kleur
                     .bold()
-                    .green("src/routes/+layout.svelte, src/routes/+layout, src/routes/+layout.server") +
+                    .green("src/routes/+layout.svelte src/routes/+layout src/routes/+layout.server") +
                 "?",
         });
         if (isCancel(layout)) {
@@ -109,8 +106,8 @@ export async function addSupabase() {
         ", created " +
         kleur
             .bold()
-            .green(`${dbFolder}/client, ${auth ? "src/hooks.client, src/hooks.server" : ""}`) +
-        kleur.bold().green(".env"));
+            .green(`${dbFolder}/client ${auth ? "src/hooks.client src/hooks.server" : ""}`) +
+        kleur.bold().green(" .env"));
     if (language === "ts") {
         s.start("Configuring types...");
         await execa("npm", ["install", "-D", "supabase"]);
@@ -125,7 +122,7 @@ export async function addSupabase() {
             " script to " +
             kleur.bold().green("package.json"));
     }
-    outro(kleur.bold().inverse(" Next steps "));
+    outro(kleur.bold().inverse(" Complete "));
     console.log("1. Update environment variables in " + kleur.bold().green(".env"));
     if (language === "ts") {
         console.log();

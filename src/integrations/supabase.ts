@@ -1,4 +1,3 @@
-#! /usr/bin/env node
 import {
 	confirm,
 	select,
@@ -12,7 +11,6 @@ import fs from "fs";
 import kleur from "kleur";
 
 export async function addSupabase() {
-	// language
 	const language = await select({
 		message: "Use JavaScript or TypeScript:",
 		options: [
@@ -26,7 +24,6 @@ export async function addSupabase() {
 		process.exit(0);
 	}
 
-	// auth
 	const auth = await confirm({
 		message: "Do you want to use Supabase for Authentication?",
 	});
@@ -46,7 +43,7 @@ export async function addSupabase() {
 				kleur
 					.bold()
 					.green(
-						"src/routes/+layout.svelte, src/routes/+layout, src/routes/+layout.server",
+						"src/routes/+layout.svelte src/routes/+layout src/routes/+layout.server",
 					) +
 				"?",
 		});
@@ -171,11 +168,11 @@ export async function addSupabase() {
 			kleur
 				.bold()
 				.green(
-					`${dbFolder}/client, ${
-						auth ? "src/hooks.client, src/hooks.server" : ""
+					`${dbFolder}/client ${
+						auth ? "src/hooks.client src/hooks.server" : ""
 					}`,
 				) +
-			kleur.bold().green(".env"),
+			kleur.bold().green(" .env"),
 	);
 
 	if (language === "ts") {
@@ -200,7 +197,7 @@ export async function addSupabase() {
 		);
 	}
 
-	outro(kleur.bold().inverse(" Next steps "));
+	outro(kleur.bold().inverse(" Complete "));
 
 	console.log(
 		"1. Update environment variables in " + kleur.bold().green(".env"),
