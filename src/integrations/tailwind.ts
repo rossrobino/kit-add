@@ -29,6 +29,15 @@ export async function addTailwind() {
 		if (error) console.error(error);
 	});
 
+	const postcssConfig = fs.readFileSync(
+		new URL(`../assets/tailwind/postcss.config.cjs`, import.meta.url),
+		"utf-8",
+	);
+
+	fs.appendFile(`postcss.config.cjs`, postcssConfig, (error) => {
+		if (error) console.error(error);
+	});
+
 	const appCss = fs.readFileSync(
 		new URL(`../assets/tailwind/app.css`, import.meta.url),
 		"utf-8",
@@ -38,7 +47,7 @@ export async function addTailwind() {
 		if (error) console.error(error);
 	});
 
-	s.stop("Created " + kleur.bold().green("tailwind.config.cjs src/app.css"));
+	s.stop("Created " + kleur.bold().green("tailwind.config.cjs postcss.config.cjs src/app.css"));
 
 	// prettier
 	const prettier = fs.existsSync(".prettierrc");
